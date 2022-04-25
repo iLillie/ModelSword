@@ -8,10 +8,10 @@
 	<header>
 		<nav>
 			<ul>
-				<li><a class:active={$page.url.pathname.includes("sabers")} href="/sabers">Sabers</a></li>
-				<li><a class:active={$page.url.pathname.includes("bloqs")} href="/bloqs">Bloqs</a></li>
-				<li><a class:active={$page.url.pathname.includes('platforms')} href="/platforms">Platforms</a></li>
-				<li><a class:active={$page.url.pathname.includes('avatars')} href="/avatars">Avatars</a></li>
+				<li><a class:active={$page.url.pathname.toLowerCase().includes("sabers")} href="/sabers">Sabers</a></li>
+				<li><a class:active={$page.url.pathname.toLowerCase().includes("bloqs")} href="/bloqs">Bloqs</a></li>
+				<li><a class:active={$page.url.pathname.toLowerCase().includes('platforms')} href="/platforms">Platforms</a></li>
+				<li><a class:active={$page.url.pathname.toLowerCase().includes('avatars')} href="/avatars">Avatars</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -72,7 +72,7 @@
 
 	.wrapper {
 		display: grid;
-		max-width: min(100vw - 2rem, 85rem);
+		max-width: min(100vw - 2rem, 70rem);
 		margin-inline: auto;
 		grid-template-rows: 1fr auto 1fr;
 		align-items: center;

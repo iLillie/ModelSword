@@ -1,9 +1,10 @@
 import {RequestHandler} from "./index";
 import {modelsaber_api} from "./_api";
 
+const ITEM_AMOUNT = 16;
+
 /** @type {import('./[page]').RequestHandler} */
 export const get: RequestHandler = async ({ params }) => {
-    console.log(params);
 
     let categories = ["sabers", "bloqs", "platforms", "avatars"];
     if(!categories.includes(params.category.toLowerCase())) {
@@ -15,9 +16,9 @@ export const get: RequestHandler = async ({ params }) => {
 
 
     let pageNum = Number(params.page);
-    let offset =  ((pageNum - 1) * 16);
+    let offset =  ((pageNum - 1) * ITEM_AMOUNT);
     let start = 0 + offset;
-    let end = 16 + offset;
+    let end = ITEM_AMOUNT + offset;
 
     let searchType = "saber";
 

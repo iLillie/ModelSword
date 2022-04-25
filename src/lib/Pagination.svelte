@@ -9,7 +9,7 @@
   {#if page > 1}
     <li class="btns">
       <a href="{page-1}"><svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.828 6.99999L7.778 11.95L6.364 13.364L0 6.99999L6.364 0.635986L7.778 2.04999L2.828 6.99999Z" fill="white"/>
+        <path d="M2.828 6.99999L7.778 11.95L6.364 13.364L0 6.99999L6.364 0.635986L7.778 2.04999L2.828 6.99999Z" fill="black"/>
       </svg></a>
     </li>
     <li>
@@ -23,7 +23,7 @@
   {/each}
   <li class="btns">
     <a href="{page+1}"><svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5.172 6.99999L0.222 2.04999L1.636 0.635986L8 6.99999L1.636 13.364L0.222 11.95L5.172 6.99999Z" fill="white"/>
+      <path d="M5.172 6.99999L0.222 2.04999L1.636 0.635986L8 6.99999L1.636 13.364L0.222 11.95L5.172 6.99999Z" fill="black"/>
     </svg></a>
   </li>
 </ul>
@@ -61,6 +61,7 @@
 
     li {
         border-radius: 0.2rem;
+        transition:  300ms ease;
     }
 
     li a {
@@ -72,21 +73,22 @@
     }
 
     .btns {
-        background-color: black;
+        background-color: white;
     }
 
     li:hover {
-        background-color: #313131;
+        background-color: white;
         text-decoration: none;
-        color: #B67CFF;
+        color: black;
+        transform: scale(105%);
     }
 
     .active {
-        color: #B67CFF;
-        background-color: black;
+        color: black;
+        background-color: white;
     }
 
     .active:hover {
-        background-color: black;
+        background-color: white;
     }
 </style>
