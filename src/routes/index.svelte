@@ -4,33 +4,37 @@
 
 <script lang="ts">
 	import Counter from '$lib/Counter.svelte';
+	import ModelCard from "../lib/ModelCard.svelte";
+	import {modelsaber_api} from "./sabers/_api";
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Testing</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
+	<div class="grid-layout">
+		<ModelCard></ModelCard>
+		<ModelCard></ModelCard>
+		<ModelCard></ModelCard>
+		<ModelCard></ModelCard>
+		<ModelCard></ModelCard>
+		<ModelCard></ModelCard>
+		<ModelCard></ModelCard>
+		<ModelCard></ModelCard>
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+	</div>
 </section>
 
 <style>
+
+	.grid-layout {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+	}
+
 	section {
 		display: flex;
 		flex-direction: column;
@@ -43,18 +47,5 @@
 		width: 100%;
 	}
 
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
 </style>
