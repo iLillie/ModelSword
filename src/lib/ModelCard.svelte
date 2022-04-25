@@ -3,7 +3,8 @@
     export let id = "";
     export let thumbnail = "";
     export let type = "saber";
-    $: backgroundImage = thumbnail.includes("modelsaber") ? `url("${thumbnail}")`.toLowerCase() : `url("https://modelsaber.com/files/${type}/${id}/${thumbnail}")`.toLowerCase();
+    //$: backgroundImage = thumbnail.includes("modelsaber") ? `url("${thumbnail}")`.toLowerCase() : `url("https://modelsaber.com/files/${type}/${id}/${thumbnail}")`.toLowerCase();
+    $: backgroundImage = thumbnail.includes("modelsaber") ? thumbnail.toLowerCase() : `https://modelsaber.com/files/${type}/${id}/${thumbnail}`.toLowerCase();
 
     export let author = "";
     export let title = ""
@@ -17,7 +18,7 @@
 </script>
 
 <div class="animate-wrapper">
-  <article use:css={{backgroundImage}}>
+  <article>
     {#if isNSFW }
       <div class="nsfw-filter">
         NSFW WARNING <br>(Hover to see)
@@ -40,7 +41,7 @@
         </svg>
       </a>
     </div>
-
+    <img class="background" src="{backgroundImage}" alt="">
   </article>
 </div>
 
@@ -54,9 +55,9 @@
         max-width: 15.5rem;
         aspect-ratio: 1 / 1;
         width: 15.5rem;
-        background-color: rgba(0, 0, 0, 0.8);
-        background-image: var(--backgroundImage);
-        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 35%,  rgba(0, 0, 0, 0) 65%, #000000 100%), var(--backgroundImage);
+        /*background-color: rgba(0, 0, 0, 0.8);*/
+        /*background-image: var(--backgroundImage);*/
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 35%,  rgba(0, 0, 0, 0) 65%, #000000 100%);
         background-size: cover;
         color: white;
         border-radius: 0.4em;
@@ -65,6 +66,15 @@
 
     p {
         color: white;
+    }
+
+    .background {
+        position: absolute;
+        inset: 0 0 0 0;
+        width: 100%;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 0.4em;
     }
 
     .styleee {

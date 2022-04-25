@@ -1,3 +1,7 @@
+<script context="module">
+
+</script>
+
 <script lang="ts">
     import ModelCard from "../../lib/ModelCard.svelte";
     import {page} from "$app/stores";

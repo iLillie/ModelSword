@@ -19,7 +19,12 @@
 body {
 	min-height: 100vh;
 	margin: 0;
+	background: #151c26;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
+
 
 
 
