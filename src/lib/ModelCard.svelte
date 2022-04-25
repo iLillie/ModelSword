@@ -4,7 +4,7 @@
     export let id = "1645913663";
     export let thumbnail = "original.png";
     export let type = "saber";
-    $: backgroundImage = thumbnail.includes("modelsaber") ? `url("${thumbnail}")` : `url("https://modelsaber.com/files/${type}/${id}/${thumbnail}")`;
+    $: backgroundImage = thumbnail.includes("modelsaber") ? `url("${thumbnail}")`.toLowerCase() : `url("https://modelsaber.com/files/${type}/${id}/${thumbnail}")`.toLowerCase();
 
     export let author = "A";
     export let title = "A"
