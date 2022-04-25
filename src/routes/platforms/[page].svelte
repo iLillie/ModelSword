@@ -5,8 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Testings</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>Platforms</title>
 </svelte:head>
 
 

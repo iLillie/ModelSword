@@ -5,10 +5,8 @@
 </script>
 
 <svelte:head>
-  <title>Testings</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>Bloqs</title>
 </svelte:head>
-
 
 
 <section>
