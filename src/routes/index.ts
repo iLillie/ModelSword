@@ -5,7 +5,7 @@ export const get: RequestHandler = async ({ locals }) => {
     return {
         status: 303,
         headers: {
-            location: '/sabers/1'
+            location: '/Sabers/1'
         }
     };
 };

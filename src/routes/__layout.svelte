@@ -9,9 +9,9 @@
 		<nav>
 			<ul>
 				<li><a class:active={$page.url.pathname.includes("sabers")} href="/sabers">Sabers</a></li>
-				<li><a class:active={$page.url.pathname.includes("blocks")} href="/blocks">Bloqs</a></li>
-				<li><a class:active={$page.url.pathname.includes('/platforms')} href="/platforms">Platforms</a></li>
-				<li><a class:active={$page.url.pathname.includes('/avatars')} href="/avatars">Avatars</a></li>
+				<li><a class:active={$page.url.pathname.includes("bloqs")} href="/bloqs">Bloqs</a></li>
+				<li><a class:active={$page.url.pathname.includes('platforms')} href="/platforms">Platforms</a></li>
+				<li><a class:active={$page.url.pathname.includes('avatars')} href="/avatars">Avatars</a></li>
 			</ul>
 		</nav>
 	</header>

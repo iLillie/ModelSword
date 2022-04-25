@@ -4,7 +4,7 @@ export function modelsaber_api( resource: string, data?: Record<string, unknown>
     return fetch(`${base}/${resource}`, {
         method: "get",
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
         },
         body: data && JSON.stringify(data)
     });

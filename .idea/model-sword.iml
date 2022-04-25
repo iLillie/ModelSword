@@ -6,7 +6,6 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/.svelte-kit/types/src/routes/platforms" />
-      <excludeFolder url="file://$MODULE_DIR$/src/routes/platforms" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

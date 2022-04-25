@@ -33,7 +33,7 @@
         font-family: "Inter";
         --border: 1px;
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
         list-style: none;
         background-color: rgba(0, 0, 0, 0.75);
         padding: 1rem 1rem;

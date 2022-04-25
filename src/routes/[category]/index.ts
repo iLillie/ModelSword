@@ -1,14 +1,22 @@
 import {RequestHandler} from "./index";
 
 
-
-export const get: RequestHandler = async ({ locals }) => {
-    // locals.userid comes from src/hooks.js
-    //const response = await modelsaber_api("get.php?type=saber&start=0&end=8");
+/** @type {import('./[category]').RequestHandler} */
+export const get: RequestHandler = async ({ params }) => {
+    let categories = ["sabers", "bloqs", "platforms", "avatars"];
+    if(!categories.includes(params.category.toLowerCase())) {
+        return {
+            status: 404,
+            body: {
+                "error": "notfound",
+                "message": "Not Found"
+            }
+        }
+    }
     return {
             status: 303,
             headers: {
-                location: '/sabers/1'
+                location: `/${params.category}/1`
             }
     };
 };
