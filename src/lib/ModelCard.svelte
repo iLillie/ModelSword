@@ -63,7 +63,7 @@
     .original-link {
         position: absolute;
         top: 0;
-        right: 0.75rem;
+        right: 0.55rem;
     }
 
     .overflow-text {
