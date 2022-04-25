@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 	import {page} from "$app/stores";
 	import Pagination from "../lib/Pagination.svelte";

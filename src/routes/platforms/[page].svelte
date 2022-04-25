@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Counter from '$lib/Counter.svelte';
     import ModelCard from "../../lib/ModelCard.svelte";
     export let sabers: any;
     export let page: any;

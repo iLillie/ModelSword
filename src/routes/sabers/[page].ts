@@ -1,13 +1,8 @@
-import {api} from "../todos/_api";
 import {RequestHandler} from "./index";
 import {modelsaber_api} from "./_api";
 
 /** @type {import('./[page]').RequestHandler} */
 export const get: RequestHandler = async ({ params }) => {
-    // locals.userid comes from src/hooks.js
-    if(Number(params.page) === NaN) {
-
-    }
     let pageNum = Number(params.page);
     let offset =  ((pageNum - 1) * 16);
     let start = 0 + offset;
