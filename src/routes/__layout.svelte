@@ -58,7 +58,7 @@
 	ul a {
 		color: White;
 		font-weight: 500;
-		font-family: "Inter";
+		font-family: "Inter", serif;
 		font-size: 1.5rem;
 	}
 

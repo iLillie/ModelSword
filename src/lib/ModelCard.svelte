@@ -3,7 +3,7 @@
     export let thumbnail = "";
     export let type = "saber";
     $: backgroundImage = thumbnail.includes("modelsaber") ? thumbnail.toLowerCase() : `https://modelsaber.com/files/${type}/${id}/${thumbnail}`.toLowerCase();
-
+    export let discord_id = "";
     export let author = "";
     export let title = ""
     export let download = ""
@@ -27,9 +27,9 @@
         <path d="M10.3021 6.62646V8.62646H5.30206V19.6265H16.3021V14.6265H18.3021V20.6265C18.3021 20.8917 18.1967 21.146 18.0092 21.3336C17.8216 21.5211 17.5673 21.6265 17.3021 21.6265H4.30206C4.03685 21.6265 3.78249 21.5211 3.59496 21.3336C3.40742 21.146 3.30206 20.8917 3.30206 20.6265V7.62646C3.30206 7.36125 3.40742 7.10689 3.59496 6.91936C3.78249 6.73182 4.03685 6.62646 4.30206 6.62646H10.3021ZM21.3021 3.62646V12.6265L17.5081 8.83346L11.5091 14.8335L10.0951 13.4195L16.0941 7.41947L12.3021 3.62646H21.3021Z" fill="white"/>
       </svg>
     </a>
-    <div class="styleee">
+    <div class="overlay">
       <header>
-        <p style="max-width: 20ch;" class="overflow-text">{author}</p>
+        <a href="https://modelsaber.com/Profile/?user={discord_id}" style="max-width: 20ch;" class="overflow-text">{author}</a>
         <h3 style="max-width: 20ch;" class="overflow-text">{title}</h3>
       </header>
       <a href="{download}" aria-label="Download">
@@ -75,7 +75,7 @@
         border-radius: 0.4em;
     }
 
-    .styleee {
+    .overlay {
         box-sizing: border-box;
         position: absolute;
         display: flex;
@@ -93,8 +93,12 @@
         font-size: 1rem;
     }
 
-    a {
+    .overlay > a {
         margin-left: auto;
+    }
+
+    a {
+        color: #4fa6ff;
     }
 
     svg, path {
