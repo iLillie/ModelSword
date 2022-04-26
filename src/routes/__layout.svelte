@@ -8,6 +8,7 @@
 	<header>
 		<nav>
 			<ul>
+				<li><a class:active={$page.url.pathname.toLowerCase().includes("all")} href="/all">All</a></li>
 				<li><a class:active={$page.url.pathname.toLowerCase().includes("sabers")} href="/sabers">Sabers</a></li>
 				<li><a class:active={$page.url.pathname.toLowerCase().includes("bloqs")} href="/bloqs">Bloqs</a></li>
 				<li><a class:active={$page.url.pathname.toLowerCase().includes('platforms')} href="/platforms">Platforms</a></li>

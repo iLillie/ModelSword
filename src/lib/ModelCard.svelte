@@ -12,9 +12,9 @@
     $: tags_lower = tags.map(element => {
         return element.toLowerCase();
     });
+    // Todo Implement better way of toggling NSFW.
     $: isNSFW = tags_lower.includes("nsfw");
 </script>
-
 <div class="animate-wrapper">
   <article>
     {#if isNSFW }

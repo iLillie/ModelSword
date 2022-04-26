@@ -2,7 +2,7 @@ import type { RequestHandler } from "@sveltejs/kit";
 
 /** @type {import('./[category]').RequestHandler} */
 export const get: RequestHandler = async ({ params }) => {
-    let categories = ["sabers", "bloqs", "platforms", "avatars"];
+    let categories = ["sabers", "bloqs", "platforms", "avatars", "all"];
     if(!categories.includes(params.category.toLowerCase())) {
         return {
             status: 404,

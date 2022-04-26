@@ -2,9 +2,7 @@ import type { RequestHandler } from "@sveltejs/kit";
 import {modelsaber_api} from "./_api";
 
 const ITEM_AMOUNT = 16;
-const VALID_CATEGORIES = ["sabers", "bloqs", "platforms", "avatars"];
-
-
+const VALID_CATEGORIES = ["sabers", "bloqs", "platforms", "avatars", "all"];
 
 let getSearchType = (category: string) => {
     let searchType = "";
@@ -20,6 +18,9 @@ let getSearchType = (category: string) => {
             break;
         case "avatars":
             searchType = "avatar";
+            break;
+        case "all":
+            searchType = "all";
             break;
         default:
             searchType = "saber";
@@ -50,11 +51,11 @@ export const get: RequestHandler = async ({ params }) => {
     let offset =  ((currentPage - 1) * ITEM_AMOUNT);
     let start = 0 + offset;
     let end = ITEM_AMOUNT + offset;
-
+    console.log(params.category);
     let searchType = getSearchType(params.category.toLowerCase());
 
+        console.log(searchType);
     const response = await modelsaber_api(`get.php?type=${searchType}&start=${start}&end=${end}&sort=date&sortDirection=desc`);
-
     return {
         body: {
             models: await response.json(),
