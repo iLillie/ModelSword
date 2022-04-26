@@ -2,8 +2,10 @@
     export let currentPage: any;
     $: currentPage = Number(currentPage);
 
-    let isNotFirstPage = currentPage > 1;
-    $: newPagesCount = isNotFirstPage ? 4 : 5;
+    $: isNotFirstPage = currentPage > 1;
+    $: isAboveSecondPage = currentPage > 2;
+
+    $: newPagesCount = isAboveSecondPage ? 5 : 6;
 </script>
 
 <ul>
@@ -17,8 +19,10 @@
         </svg>
       </a>
     </li>
+  {/if}
+  {#if isAboveSecondPage}
     <li>
-      <a href="{currentPage-1}">{currentPage - 1}</a>
+      <a href="{currentPage-1}">{currentPage-1}</a>
     </li>
   {/if}
   {#each Array(newPagesCount) as _, i}
