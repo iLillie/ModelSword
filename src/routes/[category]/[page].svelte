@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-  <title>{type}</title>
+  <title>ModelSword | {type}</title>
 </svelte:head>
 
 <section>
