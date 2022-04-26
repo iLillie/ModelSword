@@ -4,7 +4,7 @@
 	import Pagination from "../lib/Pagination.svelte";
 </script>
 
-<div class="wrapper">
+<div class="container">
 	<header>
 		<nav>
 			<ul>
@@ -19,11 +19,20 @@
 		<slot />
 	</main>
 	<footer>
-		<Pagination num="{$page.params.page}" />
+		<Pagination currentPage="{$page.params.page}" />
 	</footer>
 </div>
 
 <style>
+	.container {
+		display: grid;
+		max-width: min(100vw - 2rem, 70rem);
+		margin-inline: auto;
+		grid-template-rows: 1fr auto 1fr;
+		align-items: center;
+		min-height: 100vh;
+	}
+
 	main {
 		flex: 1;
 		display: flex;
@@ -34,12 +43,9 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin: 3rem 0 3rem 0;
+	header {
+		margin-inline: auto;
+		font-size: 1.25rem;
 	}
 
 	ul {
@@ -56,26 +62,16 @@
 		font-size: 1.5rem;
 	}
 
-	footer a {
-		font-weight: bold;
-	}
-
 	.active {
 		color: #B67CFF;
 		text-decoration: underline;
 	}
 
-	header {
-		margin-inline: auto;
-		font-size: 1.25rem;
-	}
-
-	.wrapper {
-		display: grid;
-		max-width: min(100vw - 2rem, 70rem);
-		margin-inline: auto;
-		grid-template-rows: 1fr auto 1fr;
+	footer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		align-items: center;
-		min-height: 100vh;
+		margin: 3rem 0 3rem 0;
 	}
 </style>

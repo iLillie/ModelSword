@@ -1,16 +1,17 @@
 <script context="module">
-
+    export const hydrate = false;
+    export const router = false;
 </script>
 
 <script lang="ts">
     import ModelCard from "../../lib/ModelCard.svelte";
     import {page} from "$app/stores";
-    import {slide} from "svelte/transition";
-    export let sabers: any;
+    export let models: any;
 
     let toProperType = (input: any) => {
       return input.charAt(0).toUpperCase() + input.slice(1);
     }
+
     let type = toProperType($page.params.category);
 </script>
 
@@ -20,9 +21,13 @@
 
 <section>
   <div class="grid-layout">
-    {#each Object.entries(sabers).reverse() as [id, obj]}
-        <ModelCard tags="{obj.tags}" id="{id}" thumbnail="{obj.thumbnail}"
-                   author="{obj.author}" url="https://modelsaber.com/{type}/?id={obj.id}" type="{obj.type}" title="{obj.name}" download="{obj.download}"/>
+    {#each Object.entries(models).reverse() as [id, obj]}
+        <ModelCard tags="{obj.tags}"
+                   id="{id}" thumbnail="{obj.thumbnail}"
+                   author="{obj.author}"
+                   url="https://modelsaber.com/{type}/?id={obj.id}" type="{obj.type}"
+                   title="{obj.name}"
+                   download="{obj.download}"/>
     {/each}
   </div>
 </section>
@@ -34,7 +39,6 @@
         width: 100%;
         gap: 1rem;
         justify-items: center;
-        z-index: 2000;
     }
 
     section {

@@ -1,5 +1,4 @@
-import {RequestHandler} from "./index";
-
+import type { RequestHandler } from "@sveltejs/kit";
 
 /** @type {import('./[category]').RequestHandler} */
 export const get: RequestHandler = async ({ params }) => {
