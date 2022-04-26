@@ -1,9 +1,7 @@
 <script>
-    import {css} from "./css.js";
     export let id = "";
     export let thumbnail = "";
     export let type = "saber";
-    //$: backgroundImage = thumbnail.includes("modelsaber") ? `url("${thumbnail}")`.toLowerCase() : `url("https://modelsaber.com/files/${type}/${id}/${thumbnail}")`.toLowerCase();
     $: backgroundImage = thumbnail.includes("modelsaber") ? thumbnail.toLowerCase() : `https://modelsaber.com/files/${type}/${id}/${thumbnail}`.toLowerCase();
 
     export let author = "";
