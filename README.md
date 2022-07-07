@@ -1,22 +1,16 @@
-# create-svelte
+# ModelSword
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Alternative front-end for [ModelSaber](https://modelsaber.com/).
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Motivation
 
-```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
-```
+The current front-end for ModelSaber is outdated, and has an annoying pagnation problem.  
+It doesn't store the previous pagnation number, so you get sent back whenever you navigate between the pages.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the repo a and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
