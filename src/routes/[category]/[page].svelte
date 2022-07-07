@@ -8,6 +8,9 @@
     export let models: any;
     let category: string = $page.params.category;
     let categoryType = category.charAt(0).toUpperCase() + category.slice(1);
+    let toCategoryType = (input: string) => {
+        return input.charAt(0).toUpperCase() + input.slice(1) + "s";
+    }
 </script>
 
 <svelte:head>
@@ -20,7 +23,7 @@
         <ModelCard tags="{obj.tags}"
                    id="{id}" thumbnail="{obj.thumbnail}"
                    author="{obj.author}"
-                   url="https://modelsaber.com/{categoryType}/?id={obj.id}" type="{obj.type}"
+                   url="https://modelsaber.com/{toCategoryType(obj.type)}/?id={obj.id}" type="{obj.type}"
                    title="{obj.name}"
                    download="{obj.download}"
                   discord_id="{obj.discordid}"/>
