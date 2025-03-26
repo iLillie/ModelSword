@@ -13,7 +13,7 @@ jobs:
           COMMIT_HASH: ${{ github.event.head_commit.id }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          author=$(gh pr list --state closed --json author,mergeCommit | jq --arg commit_hash "$COMMIT_HASH" '.[] | select(.mergeCommit.oid == commit_hash) | .author')
+          author=$(gh pr list --state closed --json author,mergeCommit | jq --arg commit_hash "$COMMIT_HASH" '.[] | select(.mergeCommit.oid == $commit_hash) | .author')
           echo "$author"
       - name: "Check stuff"
         env:
