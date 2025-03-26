@@ -1,0 +1,11 @@
+name: "example"
+
+on:
+  pull_request
+
+jobs:
+  example:
+    runs-on: self-hosted
+    steps:
+      - name: "example"
+        run: echo "Hello world"
