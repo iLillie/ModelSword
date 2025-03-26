@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: "Fetch info about PR"
         env:
-          COMMIT_HASH: ${{ github.head_commit.id }}
+          COMMIT_HASH: ${{ github.event.head_commit.id }}
         run: |
           author=$(gh pr list --state closed --json author,mergeCommit | jq --arg commit_hash "$COMMIT_HASH" '.[] | select(.mergeCommit.oid == commit_hash) | .author')
           echo "$author"
