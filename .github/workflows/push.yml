@@ -10,8 +10,8 @@ jobs:
         env:
           COMMIT_HASH: ${{ github.head_commit.id }}
         run: |
-          pr_number=$(gh pr list --state closed --json | jq --arg commit_hash "$COMMIT_HASH" '.[] | select(.mergeCommit.oid == commit_hash)')
-          echo $pr_number
+          author=$(gh pr list --state closed --json author,mergeCommit | jq --arg commit_hash "$COMMIT_HASH" '.[] | select(.mergeCommit.oid == commit_hash) | .author')
+          echo "$author"
       - name: "Check stuff"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
