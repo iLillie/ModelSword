@@ -1,20 +1,31 @@
-name: "Testing"
+name: "Check dependabot"
 on: 
   push:
     branches: [main]
+
 jobs:
-  build:
+  dependabot_check:
     runs-on: ubuntu-latest
     steps:
       - name: "checkout repo"
         uses: actions/checkout@v4
-      - name: "Fetch info about PR"
+      - name: "Check if commit is merged from Dependabot PR"
+        id: dependabot_pr
         env:
           COMMIT_HASH: ${{ github.event.head_commit.id }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          author=$(gh pr list --state closed --json author,mergeCommit | jq --arg commit_hash "$COMMIT_HASH" '.[] | select(.mergeCommit.oid == $commit_hash) | .author')
-          echo "$author"
+          author_info=$(gh pr list --state closed --json author,mergeCommit | jq --arg commit_hash "$COMMIT_HASH" '.[] | select(.mergeCommit.oid == $commit_hash) | .author')
+          is_bot=$(echo "$author_info" | jq '.is_bot')
+          login=$(echo "$author_info" | jq '.login')
+          echo "$login"
+          echo "$is_bot"
+
+          if [[ $is_bot == true && $login == "app/dependabot" ]]; then
+            echo "Dependabot PR"
+          else
+            echo "Not dependabot PR"
+          fi
       - name: "Check stuff"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
